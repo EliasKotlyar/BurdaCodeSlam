@@ -43,10 +43,17 @@ class Chatbot
     public function receive($message)
     {
 
+        if($message instanceof BlockChainElement){
+
+        }else{
+            return;
+        }
         $this->blockChain = $message;
         $count = $this->blockChain->getCount();
         $this->debugMessage('Receiving Blockchain...BlockChain Count' . $count);
         $this->debugMessage( $this->blockChain->toString());
+        $this->debugMessage( $this->blockChain->printBlockChain());
+
 
         $this->addNewBlockChainElement(rand(0, 10000));
 
@@ -59,6 +66,10 @@ class Chatbot
 
     }
 
+    /**
+     * Debug Message:
+     * @param $message
+     */
     public function debugMessage($message)
     {
         echo "Bot " . $this->getName() . ":" . $message . "\r\n";

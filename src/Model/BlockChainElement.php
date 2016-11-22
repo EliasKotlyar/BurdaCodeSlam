@@ -16,6 +16,10 @@ class BlockChainElement
      */
     protected $data;
 
+    /**
+     * BlockChainElement constructor.
+     * @param $data
+     */
     public function __construct($data)
     {
         $this->data = $data;
@@ -32,6 +36,11 @@ class BlockChainElement
             $this->next->append($element);
         }
     }
+
+    /**
+     * Get Count of the BlockChain
+     * @return int
+     */
 
     public function getCount()
     {
@@ -58,6 +67,21 @@ class BlockChainElement
     public function toString()
     {
         return base64_encode(serialize($this));
+    }
+
+    /**
+     * Returns the BlockChain as String
+     *
+     */
+
+    public function printBlockChain()
+    {
+        $text = $this->data;
+        if ($this->getNext()) {
+            return $text . " ".$this->getNext()->printBlockChain();
+        } else {
+            return $text ;
+        }
     }
 
 

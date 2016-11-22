@@ -2,7 +2,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "coderstephen/slack-client": "^0.2.5"
+    "jclg/php-slack-bot": "dev-master"
   },
   "autoload": {
     "psr-4": {
