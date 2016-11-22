@@ -1,0 +1,14 @@
+{
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "coderstephen/slack-client": "^0.2.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "BurdaCodeSlam\\ChatBot\\": [
+        "src/"
+      ]
+    }
+  }
+}
